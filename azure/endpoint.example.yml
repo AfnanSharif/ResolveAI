@@ -1,0 +1,5 @@
+$schema: https://azuremlschemas.azureedge.net/latest/managedOnlineEndpoint.schema.json
+name: resolve-ai-endpoint
+auth_mode: key
+description: Evidence-grounded Resolve AI customer-support endpoint
+

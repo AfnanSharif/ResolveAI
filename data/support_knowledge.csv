@@ -1,0 +1,7 @@
+id,category,title,body,keywords
+RET-101,returns,Return eligibility,"Items in resalable condition can be returned within 30 days of delivery. Start from Order history; the portal displays the exact eligibility and label options.",return|refund|exchange
+SHP-201,shipping,Tracking has stalled,"If tracking has no new carrier scan for 72 hours, verify the address and open a carrier investigation. Offer available replacement or refund options after the investigation threshold.",delivery|late|tracking|parcel
+BIL-301,billing,Duplicate payment,"Compare the merchant transaction IDs and distinguish an authorization hold from a settled charge. Escalate two settled charges to payments; never ask for a full card number.",charged|duplicate|payment|refund
+ACC-401,account,Account recovery,"Send a reset link from the sign-in page. If it does not arrive, check spam and verify the account email without disclosing whether an unrelated address exists.",login|password|locked|email
+PRD-501,product,Product warranty,"Use the serial number and proof of purchase to check product-specific coverage. Explain exclusions without promising approval before inspection.",warranty|defect|serial
+SEC-901,account,Suspicious account activity,"Ask the customer to reset their password and end other sessions. Escalate unauthorized access immediately; never request a password, PIN, CVV, or one-time code.",fraud|security|breach|stolen

@@ -1,0 +1,5 @@
+subject,message,expected_category,expected_review
+Late parcel,Tracking has not moved for four days,shipping,false
+Duplicate charge,I was charged twice for one order,billing,false
+Account breach,I think my account was stolen in a breach,account,true
+Damaged item,The product arrived broken and I need a replacement,returns,false

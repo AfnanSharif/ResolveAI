@@ -1,0 +1,40 @@
+$schema: https://azuremlschemas.azureedge.net/latest/pipelineJob.schema.json
+type: pipeline
+description: Validate support knowledge and evaluate offline triage before deployment
+settings:
+  default_compute: azureml:cpu-cluster
+inputs:
+  knowledge:
+    type: uri_file
+    path: ../data/support_knowledge.csv
+  evaluation:
+    type: uri_file
+    path: ../data/evaluation_cases.csv
+jobs:
+  validate_knowledge:
+    type: command
+    code: ..
+    environment:
+      image: mcr.microsoft.com/azureml/openmpi4.1.0-ubuntu20.04:latest
+      conda_file: conda.yml
+    command: >-
+      python azure/validate_knowledge.py
+      --knowledge ${{parent.inputs.knowledge}}
+      --report ${{outputs.report}}
+    outputs:
+      report:
+        type: uri_file
+  evaluate_agent:
+    type: command
+    code: ..
+    environment:
+      image: mcr.microsoft.com/azureml/openmpi4.1.0-ubuntu20.04:latest
+      conda_file: conda.yml
+    command: >-
+      python azure/evaluate.py
+      --project .
+      --cases ${{parent.inputs.evaluation}}
+      --report ${{outputs.report}}
+    outputs:
+      report:
+        type: uri_file

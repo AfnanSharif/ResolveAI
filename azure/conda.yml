@@ -1,0 +1,10 @@
+name: resolve-ai
+channels:
+  - conda-forge
+dependencies:
+  - python=3.10
+  - pip
+  - pip:
+      - openai>=1.66,<3
+      - numpy>=1.26,<3
+      - faiss-cpu>=1.8,<2
